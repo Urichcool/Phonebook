@@ -29,7 +29,7 @@ export const LoginFormInput = styled.input`
 
 export const LoginFormButton = styled.button`
   font-size: 20px;
-  background-color: purple;
+  background-color: #d601d6;
   color: white;
   padding: 10px;
   display: flex;

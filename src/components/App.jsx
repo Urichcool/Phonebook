@@ -17,8 +17,8 @@ import { Route, Routes } from 'react-router-dom';
 
 const routes = {
   HomePage: lazy(() => import('../pages/HomePage')),
-  RegisterPage: lazy(() => import('../pages/Register')),
-  LoginPage: lazy(() => import('../pages/Login'))
+  RegisterPage: lazy(() => import('../pages/RegisterPage')),
+  LoginPage: lazy(() => import('../pages/LoginPage'))
   
 }
 

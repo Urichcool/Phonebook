@@ -1,15 +1,18 @@
 import {
   AppHeader,
   PhoneBookLogo,
-  PhoneBookNav,
-  PhoneBookNavLink,
   AppHeaderContainer,
 } from './AppBar.styled';
 import { AppContainer } from 'components/App,styled';
+import { AppBarNav } from './AppBarNav';
 import { MdOutlinePhoneAndroid } from 'react-icons/md';
-import { BiLogIn, BiRegistered } from 'react-icons/bi';
+import { useAuth } from 'hooks/useAuth';
+import { AppBarUserMenu } from './AppBarUserMenu';
 
 export const AppBar = () => {
+  const { isLoggedIn } = useAuth();
+
+  
   return (
     <AppHeader>
       <AppContainer>
@@ -18,15 +21,7 @@ export const AppBar = () => {
             <MdOutlinePhoneAndroid />
             Phonebook
           </PhoneBookLogo>
-          <PhoneBookNav>
-            <PhoneBookNavLink to={'./register'}>
-              <BiRegistered /> Register
-            </PhoneBookNavLink>
-            <PhoneBookNavLink to={'./login'}>
-              <BiLogIn />
-              Login
-            </PhoneBookNavLink>
-          </PhoneBookNav>
+          {isLoggedIn ? <AppBarUserMenu/> : <AppBarNav/>}
         </AppHeaderContainer>
       </AppContainer>
     </AppHeader>

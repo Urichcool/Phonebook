@@ -29,17 +29,17 @@ export const RegisterFormInput = styled.input`
 
 export const RegisterFormButton = styled.button`
   font-size: 20px;
-  background-color: purple;
-color:white;
-padding:10px;
-display:flex;
-align-items:center;
-cursor: pointer;
-border:none;
-border-radius:4px;
-&:hover,
-&:focus{
+  background-color: #d601d6;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  &:hover,
+  &:focus {
     color: orange;
-}
+  }
 `;
 
