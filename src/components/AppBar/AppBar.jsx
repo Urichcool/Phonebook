@@ -14,12 +14,12 @@ export const AppBar = () => {
     <AppHeader>
       <AppContainer>
         <AppHeaderContainer>
-          <PhoneBookLogo>
+          <PhoneBookLogo to={'./'}>
             <MdOutlinePhoneAndroid />
             Phonebook
           </PhoneBookLogo>
           <PhoneBookNav>
-            <PhoneBookNavLink>
+            <PhoneBookNavLink to={'./register'}>
               <BiRegistered /> Register
             </PhoneBookNavLink>
             <PhoneBookNavLink>

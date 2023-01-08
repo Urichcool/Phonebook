@@ -17,6 +17,7 @@ import { Route, Routes } from 'react-router-dom';
 
 const routes = {
   HomePage: lazy(() => import('../pages/HomePage')),
+  RegisterPage: lazy(() => import('../pages/Register'))
   
 }
 
@@ -30,14 +31,15 @@ export const App = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  const{HomePage} = routes
+  const{HomePage, RegisterPage} = routes
 
   return (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage/>} />
-          </Route>
+          <Route index element={<HomePage />} />
+          <Route path="/register" element={<RegisterPage />} />
+        </Route>
       </Routes>
 
       {/* <ContactsApp>
