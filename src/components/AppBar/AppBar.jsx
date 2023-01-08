@@ -22,7 +22,7 @@ export const AppBar = () => {
             <PhoneBookNavLink to={'./register'}>
               <BiRegistered /> Register
             </PhoneBookNavLink>
-            <PhoneBookNavLink>
+            <PhoneBookNavLink to={'./login'}>
               <BiLogIn />
               Login
             </PhoneBookNavLink>

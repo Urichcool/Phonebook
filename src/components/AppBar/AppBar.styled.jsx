@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const AppHeader = styled.header`
   top: 0;
@@ -22,7 +22,7 @@ export const AppHeaderContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const PhoneBookLogo = styled(Link)`
+export const PhoneBookLogo = styled(NavLink)`
   text-decoration: none;
   color: inherit;
   font-size: 25px;
@@ -30,11 +30,16 @@ export const PhoneBookLogo = styled(Link)`
   display: flex;
   align-items: center;
   width: 160px;
-  &:hover,
-  &:focus {
+  &.active {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+      rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  }
+  &:hover:not(.active),
+  &:focus-visible:not(.active) {
     color: orange;
   }
 `;
+
 
 export const PhoneBookNav = styled.nav`
   display: flex;
@@ -49,8 +54,12 @@ export const PhoneBookNavLink = styled(NavLink)`
   &:last-child {
     margin-right: 0;
   }
-  &:hover,
-  &:focus {
+  &.active {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+      rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  }
+  &:hover:not(.active),
+  &:focus-visible:not(.active) {
     color: orange;
   }
   svg {
