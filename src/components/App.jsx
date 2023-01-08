@@ -1,6 +1,4 @@
 import {
-  ContactsContainer,
-  PhoneBookTitle,
   ContactsApp,
   ContactsTitle,
 } from './App,styled';
@@ -10,9 +8,17 @@ import { ThreeDots } from 'react-loader-spinner';
 import { AppContactsFilterInput } from './AppContactsFilterInput';
 import { useSelector, useDispatch } from 'react-redux';
 import { getError, getIsLoading, getContacts } from 'redux/contactsSlice';
-import { useEffect } from 'react';
+import { useEffect, lazy } from 'react';
 import { fetchContacts } from 'redux/operations';
 import { AppLoader } from './App,styled';
+import { Layout } from './Layout';
+import { Route, Routes } from 'react-router-dom';
+
+
+const routes = {
+  HomePage: lazy(() => import('../pages/HomePage')),
+  
+}
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -24,10 +30,17 @@ export const App = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
+  const{HomePage} = routes
+
   return (
-    <ContactsContainer>
-      <ContactsApp>
-        <PhoneBookTitle>Phonebook</PhoneBookTitle>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage/>} />
+          </Route>
+      </Routes>
+
+      {/* <ContactsApp>
         <AppAddContactsForm />
         {isLoading && !error && (
           <AppLoader>
@@ -41,7 +54,7 @@ export const App = () => {
             <AppContactsList />
           </>
         )}
-      </ContactsApp>
-    </ContactsContainer>
+      </ContactsApp> */}
+    </>
   );
 };
