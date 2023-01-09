@@ -66,3 +66,32 @@ export const PhoneBookNavLink = styled(NavLink)`
     margin-right: 5px;
   }
 `;
+
+
+export const UserMenu = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+export const UserMenuText = styled.p`
+  margin: 0;
+  margin-right: 40px;
+`;
+
+export const UserMenuButton = styled.button`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  color: inherit;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  svg {
+    margin-right: 5px;
+  }
+  &:hover,
+  &:focus {
+    color: orange;
+  }
+`;

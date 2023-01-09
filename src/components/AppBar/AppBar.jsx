@@ -11,8 +11,7 @@ import { AppBarUserMenu } from './AppBarUserMenu';
 
 export const AppBar = () => {
   const { isLoggedIn } = useAuth();
-
-  
+ 
   return (
     <AppHeader>
       <AppContainer>

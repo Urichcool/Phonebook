@@ -1,25 +1,25 @@
 import { useDispatch } from 'react-redux';
 import {
-    LoginFormStyled,
-    LoginFormLabel,
-    LoginFormInput,
-    LoginFormButton
+  LoginFormStyled,
+  LoginFormLabel,
+  LoginFormInput,
+  LoginFormButton,
 } from './LoginForm.styled';
+import { login } from 'redux/operations';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
-    // const form = e.currentTarget;
-    // dispatch(
-    //   register({
-    //     name: form.elements.name.value,
-    //     email: form.elements.email.value,
-    //     password: form.elements.password.value,
-    //   })
-    // );
-    // form.reset();
+    const form = e.currentTarget;
+    dispatch(
+      login({
+        email: form.elements.email.value,
+        password: form.elements.password.value
+      })
+    );
+    form.reset()
   };
 
   return (
