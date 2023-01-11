@@ -4,15 +4,19 @@ import {
   UserMenuText,
   UserMenuButton
 } from './AppBar.styled';
-import {BiLogOut} from 'react-icons/bi'
+import { BiLogOut } from 'react-icons/bi';
+import { logOut } from 'redux/operations';
+import { useDispatch } from 'react-redux';
 
 export const AppBarUserMenu = () => {
   const { user } = useAuth();
+  const dispatch = useDispatch()
+
 
   return (
     <UserMenu>
       <UserMenuText>User: {user.email}</UserMenuText>
-      <UserMenuButton><BiLogOut/>Logout</UserMenuButton>
+      <UserMenuButton onClick={() => dispatch(logOut())}><BiLogOut/>Logout</UserMenuButton>
     </UserMenu>
   );
 };

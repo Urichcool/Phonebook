@@ -37,6 +37,18 @@ export const login = createAsyncThunk(
   }
 );
 
+export const logOut = createAsyncThunk(
+  'users/logout',
+  async (_, thunkAPI) => {
+    try {
+      await axios.post('users/logout');
+      clearAuthHeader()
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+)
+
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
   async (_, thunkAPI) => {
@@ -48,6 +60,8 @@ export const fetchContacts = createAsyncThunk(
     }
   }
 );
+
+
 
 export const addContact = createAsyncThunk(
   'contacts/addContacts',
