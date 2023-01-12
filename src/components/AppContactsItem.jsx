@@ -1,13 +1,12 @@
 import { ContactsListItem, ContactsDeleteButton } from './App,styled';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from 'redux/auth/operations';
 import { getIsLoading } from 'redux/contactsSlice';
 
 const AppContactsItem = ({ name, phone, id }) => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getIsLoading);
-
 
   return (
     <ContactsListItem>

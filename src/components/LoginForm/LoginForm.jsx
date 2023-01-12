@@ -5,7 +5,7 @@ import {
   LoginFormInput,
   LoginFormButton,
 } from './LoginForm.styled';
-import { login } from 'redux/operations';
+import { login } from 'redux/auth/operations';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -16,10 +16,10 @@ export const LoginForm = () => {
     dispatch(
       login({
         email: form.elements.email.value,
-        password: form.elements.password.value
+        password: form.elements.password.value,
       })
     );
-    form.reset()
+    form.reset();
   };
 
   return (

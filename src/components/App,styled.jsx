@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 
+
 export const AppContainer = styled.div`
  margin-left: auto;
  margin-right: auto;
@@ -93,7 +94,6 @@ export const AppLoader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1200;
 `;
 
 

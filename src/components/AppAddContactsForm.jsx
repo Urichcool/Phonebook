@@ -6,7 +6,7 @@ import {
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from '../redux/contactsSlice';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/auth/operations';
 
 export const AppAddContactsForm = () => {
   const dispatch = useDispatch();

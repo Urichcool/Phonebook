@@ -49,6 +49,23 @@ export const logOut = createAsyncThunk(
   }
 )
 
+export const refreshUser = createAsyncThunk(
+  'users/current',
+  async (_, thunkAPI) => {
+    const { token } = thunkAPI.getState().auth
+    if (!token) {
+      return thunkAPI.rejectWithValue('No valid token');
+    }
+    setAuthHeader(token)
+    try {
+      const res = await axios.get('users/current');
+      return res.data
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+)
+
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
   async (_, thunkAPI) => {
