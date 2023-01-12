@@ -2,11 +2,11 @@ import {
   ContactsAddForm,
   ContactsAddButton,
   ContactsListLabel,
-} from './App,styled';
+} from './Contacts.styled';
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts } from '../redux/contactsSlice';
-import { addContact } from 'redux/auth/operations';
+import { getContacts } from '../../redux/contacts/contactsSlice';
+import { addContact } from 'redux/contacts/operations';
 
 export const AppAddContactsForm = () => {
   const dispatch = useDispatch();

@@ -1,11 +1,11 @@
-import { ContactsList } from './App,styled';
+import { ContactsList } from './Contacts.styled';
 import AppContactsItem from './AppContactsItem';
 import { useSelector } from 'react-redux';
-import { selectFilter } from 'redux/filterSlice';
-import { getContacts } from 'redux/contactsSlice';
+import { selectFilter } from 'redux/contacts/filterSlice';
+import { getContacts } from 'redux/contacts/contactsSlice';
 
-const AppContactsList = () => {
-  const filter = useSelector(selectFilter)
+export const AppContactsList = () => {
+  const filter = useSelector(selectFilter);
   const contacts = useSelector(getContacts);
 
   return (
@@ -21,4 +21,3 @@ const AppContactsList = () => {
   );
 };
 
-export default AppContactsList;
