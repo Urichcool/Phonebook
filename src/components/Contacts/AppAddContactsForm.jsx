@@ -3,7 +3,6 @@ import {
   ContactsAddButton,
   ContactsListLabel,
 } from './Contacts.styled';
-import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from '../../redux/contacts/contactsSlice';
 import { addContact } from 'redux/contacts/operations';
@@ -25,8 +24,7 @@ export const AppAddContactsForm = () => {
     dispatch(
       addContact({
         name: name,
-        id: nanoid(),
-        phone: number,
+        number: number,
       })
     );
     e.currentTarget.reset();

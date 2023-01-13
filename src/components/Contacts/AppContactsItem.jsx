@@ -4,13 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 import { getIsLoading } from 'redux/contacts/contactsSlice';
 
-const AppContactsItem = ({ name, phone, id }) => {
+const AppContactsItem = ({ name, number, id }) => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getIsLoading);
 
   return (
     <ContactsListItem>
-      {name}: {phone}
+      {name}: {number}
       <ContactsDeleteButton
         onClick={() => dispatch(deleteContact(id))}
         disabled={isLoading}
@@ -25,6 +25,6 @@ export default AppContactsItem;
 
 AppContactsItem.propTypes = {
   name: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
 };

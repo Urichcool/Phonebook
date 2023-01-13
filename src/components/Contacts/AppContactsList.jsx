@@ -7,6 +7,7 @@ import { getContacts } from 'redux/contacts/contactsSlice';
 export const AppContactsList = () => {
   const filter = useSelector(selectFilter);
   const contacts = useSelector(getContacts);
+  console.log(contacts);
 
   return (
     <ContactsList>
@@ -14,8 +15,8 @@ export const AppContactsList = () => {
         .filter(contact =>
           contact.name.toLowerCase().includes(filter.toLowerCase().trim())
         )
-        .map(({ name, id, phone }) => (
-          <AppContactsItem name={name} key={id} phone={phone} id={id} />
+        .map(({ name, id, number }) => (
+          <AppContactsItem name={name} key={id} number={number} id={id} />
         ))}
     </ContactsList>
   );

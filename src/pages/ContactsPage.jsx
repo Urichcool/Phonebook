@@ -6,7 +6,7 @@ import { AppLoader } from "components/App,styled";
 import { ThreeDots } from "react-loader-spinner";
 
 
-export const ContactsPage = () => {
+const ContactsPage = () => {
     return (
        <ContactsApp>
         <AppAddContactsForm />
@@ -17,7 +17,8 @@ export const ContactsPage = () => {
             <AppContactsFilterInput />
             <AppContactsList />
           </>
-       \
       </ContactsApp> 
     )
 }
+
+export default ContactsPage
