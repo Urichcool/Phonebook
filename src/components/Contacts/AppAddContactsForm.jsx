@@ -2,6 +2,7 @@ import {
   ContactsAddForm,
   ContactsAddButton,
   ContactsListLabel,
+  ContactsAddInput
 } from './Contacts.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from '../../redux/contacts/contactsSlice';
@@ -32,26 +33,26 @@ export const AppAddContactsForm = () => {
 
   return (
     <ContactsAddForm autoComplete="off" onSubmit={handleFormSubmit}>
-      <ContactsListLabel>
-        Name
-        <input
-          type="text"
-          name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required
-        />
-      </ContactsListLabel>
-      <ContactsListLabel>
-        Number
-        <input
-          type="tel"
-          name="number"
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          required
-        />
-      </ContactsListLabel>
+        <ContactsListLabel>
+          Name
+          <ContactsAddInput
+            type="text"
+            name="name"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            required
+          />
+        </ContactsListLabel>
+        <ContactsListLabel>
+          Number
+          <ContactsAddInput
+            type="tel"
+            name="number"
+            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            required
+          />
+        </ContactsListLabel>
       <ContactsAddButton type="submit">Add contact</ContactsAddButton>
     </ContactsAddForm>
   );

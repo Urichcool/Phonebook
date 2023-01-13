@@ -7,7 +7,6 @@ import { getContacts } from 'redux/contacts/contactsSlice';
 export const AppContactsList = () => {
   const filter = useSelector(selectFilter);
   const contacts = useSelector(getContacts);
-  console.log(contacts);
 
   return (
     <ContactsList>

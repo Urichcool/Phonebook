@@ -1,12 +1,10 @@
 import styled from '@emotion/styled';
 
 export const ContactsApp = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 200px;
+ padding: 60px;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-items: center;
 `;
 
 export const ContactsTitle = styled.h2`
@@ -15,32 +13,37 @@ export const ContactsTitle = styled.h2`
   color: #8181ec;
 `;
 
+
+
 export const ContactsAddForm = styled.form`
-  width: 350px;
-  border: 1px solid;
-  border-radius: 4px;
+  width: 400px;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const ContactsAddButton = styled.button`
-  margin: 0;
-  padding: 0;
-  width: 150px;
-  height: 30px;
+  font-size: 16px;
+  background-color: #d601d6;
+  color: white;
+  padding: 5px;
+  display: flex;
+  align-items: center;
   cursor: pointer;
-  border-radius: 4px;
   border: none;
+  border-radius: 4px;
   &:hover,
   &:focus {
-    background-color: #b3b3f1;
+    color: orange;
   }
 `;
 
-export const ContactsList = styled.ol`
+export const ContactsList = styled.ul`
   margin: 0;
   padding: 0;
   list-style-position: inside;
-  width: 350px;
+  width: 400px;
 `;
 
 export const ContactsListItem = styled.li`
@@ -55,13 +58,35 @@ export const ContactsListItem = styled.li`
 export const ContactsListLabel = styled.label`
   display: flex;
   flex-direction: column;
-  color: orange;
+  
   font-weight: 500;
   margin-bottom: 10px;
 `;
 
+export const ContactsAddInput = styled.input`
+  width: 400px;
+  height: 25px;
+  outline: none;
+  border-radius: 2px;
+  border: 1px solid gray;
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: orange;
+  }
+`;
+
 export const ContactsFilterInput = styled.input`
-  width: 350px;
+  width: 400px;
+  height: 25px;
+  outline: none;
+  border-radius: 2px;
+  border: 1px solid gray;
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: orange;
+  }
 `;
 
 export const ContactsDeleteButton = styled.button`
