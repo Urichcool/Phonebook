@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <AppContainer>
       <HomePageText>
-        Welcome to Phonebook 💁‍♀️ please register or login
+        Welcome 💁‍♀️ please register or login to use the Phonebook
       </HomePageText>
     </AppContainer>
   );

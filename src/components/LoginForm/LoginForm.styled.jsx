@@ -24,6 +24,7 @@ export const LoginFormInput = styled.input`
   &:focus,
   &:active {
     border-color: orange;
+    transition: 500ms;
   }
 `;
 
@@ -40,5 +41,6 @@ export const LoginFormButton = styled.button`
   &:hover,
   &:focus {
     color: orange;
+    transition: 500ms;
   }
 `;

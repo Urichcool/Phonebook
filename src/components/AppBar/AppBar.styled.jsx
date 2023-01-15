@@ -27,16 +27,39 @@ export const PhoneBookLogo = styled(NavLink)`
   color: inherit;
   font-size: 25px;
   font-weight: 700;
+  margin-right: 25px;
   display: flex;
   align-items: center;
   width: 160px;
   &.active {
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
-      rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    color: #88e3fa;
   }
   &:hover:not(.active),
   &:focus-visible:not(.active) {
     color: orange;
+    transition: 500ms;
+  }
+`;
+
+export const ContactsLink = styled(NavLink)`
+  text-decoration: none;
+  color: inherit;
+  font-size: 20px;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  &:last-child {
+    margin-right: 0;
+  }
+  &.active {
+    color: #88e3fa;
+  }
+  &:hover:not(.active),
+  &:focus-visible:not(.active) {
+    color: orange;
+  }
+  svg {
+    margin-right: 5px;
   }
 `;
 
@@ -55,12 +78,12 @@ export const PhoneBookNavLink = styled(NavLink)`
     margin-right: 0;
   }
   &.active {
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
-      rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    color: #88e3fa;
   }
   &:hover:not(.active),
   &:focus-visible:not(.active) {
     color: orange;
+    transition: 500ms;
   }
   svg {
     margin-right: 5px;
@@ -93,5 +116,7 @@ export const UserMenuButton = styled.button`
   &:hover,
   &:focus {
     color: orange;
+    transition: 500ms;
   }
 `;
+

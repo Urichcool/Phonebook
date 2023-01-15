@@ -24,18 +24,18 @@ export const RegisterForm = () => {
   };
 
   return (
-    <RegisterFormStyled onSubmit={handleSubmit} autoComplete="off">
+    <RegisterFormStyled onSubmit={handleSubmit} autoComplete="on">
       <RegisterFormLabel>
         Username
-        <RegisterFormInput type="text" name="name" />
+        <RegisterFormInput type="text" name="name" autoComplete="on" />
       </RegisterFormLabel>
       <RegisterFormLabel>
         Email
-        <RegisterFormInput type="email" name="email" />
+        <RegisterFormInput type="email" name="email" autoComplete="on" />
       </RegisterFormLabel>
       <RegisterFormLabel>
         Password
-        <RegisterFormInput type="password" name="password" />
+        <RegisterFormInput type="password" name="password" autoComplete="on" />
       </RegisterFormLabel>
       <RegisterFormButton type="submit">Register</RegisterFormButton>
     </RegisterFormStyled>

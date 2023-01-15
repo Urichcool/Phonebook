@@ -15,17 +15,18 @@ export const RegisterFormLabel = styled.label`
     margin-bottom:15px;
 `
 export const RegisterFormInput = styled.input`
-    width:500px;
-    height:25px;
-    outline:none;
-    border-radius:2px;
-    border:1px solid gray;
-    &:hover,
-    &:focus,
-    &:active{
-        border-color: orange;
-    }
-`
+  width: 500px;
+  height: 25px;
+  outline: none;
+  border-radius: 2px;
+  border: 1px solid gray;
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: orange;
+    transition: 500ms;
+  }
+`;
 
 export const RegisterFormButton = styled.button`
   font-size: 20px;
@@ -40,6 +41,7 @@ export const RegisterFormButton = styled.button`
   &:hover,
   &:focus {
     color: orange;
+    transition: 500ms;
   }
 `;
 

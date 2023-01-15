@@ -1,5 +1,5 @@
 import { ThreeDots } from 'react-loader-spinner';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect, lazy } from 'react';
 import { AppLoader } from './App,styled';
 import { Layout } from './Layout';
@@ -17,13 +17,6 @@ const routes = {
 };
 
 export const App = () => {
-  // const isLoading = useSelector(getIsLoading);
-  // const error = useSelector(getError);
-  // const contacts = useSelector(getContacts);
-
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
 

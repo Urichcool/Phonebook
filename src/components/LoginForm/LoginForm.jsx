@@ -23,14 +23,14 @@ export const LoginForm = () => {
   };
 
   return (
-    <LoginFormStyled onSubmit={handleSubmit} autoComplete="off">
+    <LoginFormStyled onSubmit={handleSubmit} autoComplete="on">
       <LoginFormLabel>
         Email
-        <LoginFormInput type="email" name="email" />
+        <LoginFormInput type="email" name="email" autoComplete="on" />
       </LoginFormLabel>
       <LoginFormLabel>
         Password
-        <LoginFormInput type="password" name="password" />
+        <LoginFormInput type="password" name="password" autoComplete="on" />
       </LoginFormLabel>
       <LoginFormButton type="submit">Login</LoginFormButton>
     </LoginFormStyled>

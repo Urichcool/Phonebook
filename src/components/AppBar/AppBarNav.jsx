@@ -4,10 +4,10 @@ import { BiLogIn, BiRegistered } from 'react-icons/bi';
 export const AppBarNav = () => {
   return (
     <PhoneBookNav>
-      <PhoneBookNavLink to={'./register'}>
+      <PhoneBookNavLink to={'register'}>
         <BiRegistered /> Register
       </PhoneBookNavLink>
-      <PhoneBookNavLink to={'./login'}>
+      <PhoneBookNavLink to={'login'}>
         <BiLogIn />
         Login
       </PhoneBookNavLink>

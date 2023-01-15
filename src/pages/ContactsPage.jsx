@@ -9,6 +9,7 @@ import { getIsLoading, getContacts } from 'redux/contacts/contactsSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/contacts/operations';
+import { ContactsText } from 'components/Contacts/Contacts.styled';
 
 const ContactsPage = () => {
   const isLoading = useSelector(getIsLoading);
@@ -22,6 +23,7 @@ const ContactsPage = () => {
   return (
     <AppContainer>
       <ContactsApp>
+        <ContactsText>Add new contact</ContactsText>
         <AppAddContactsForm />
         {isLoading && (
           <AppLoader>

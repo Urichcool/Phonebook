@@ -1,8 +1,15 @@
-import { ContactsListItem, ContactsDeleteButton } from './Contacts.styled';
+import {
+  ContactsListItem,
+  ContactsDeleteButton,
+  ContactsListText,
+} from './Contacts.styled';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 import { getIsLoading } from 'redux/contacts/contactsSlice';
+import { IoMdContact } from 'react-icons/io';
+import { BsFillTelephoneFill } from 'react-icons/bs';
+import { AiOutlineClose } from 'react-icons/ai';
 
 const AppContactsItem = ({ name, number, id }) => {
   const dispatch = useDispatch();
@@ -10,12 +17,21 @@ const AppContactsItem = ({ name, number, id }) => {
 
   return (
     <ContactsListItem>
-      {name}: {number}
+      <div>
+        <ContactsListText>
+          <IoMdContact />
+          {name}
+        </ContactsListText>
+        <ContactsListText>
+          <BsFillTelephoneFill />
+          {number}
+        </ContactsListText>
+      </div>
       <ContactsDeleteButton
         onClick={() => dispatch(deleteContact(id))}
         disabled={isLoading}
       >
-        Delete
+      <AiOutlineClose/>
       </ContactsDeleteButton>
     </ContactsListItem>
   );
