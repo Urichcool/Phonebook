@@ -120,3 +120,42 @@ export const UserMenuButton = styled.button`
   }
 `;
 
+export const AppFooter = styled.footer`
+display:flex;
+justify-content:center;
+align-items:center;
+  width:100%;
+ bottom:0;
+  position:fixed;
+  z-index: 1100;
+  padding-right: 24px;
+  padding-left: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: #fff;
+  background-color: #d601d6;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+`;
+
+export const AppFooterText = styled.footer`
+margin: 0;
+`;
+
+export const AppFooterLink = styled.a`
+color:white;
+cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  &:hover,
+  &:focus {
+    color: orange;
+    transition: 500ms;
+  }
+  svg{
+   width:20px;
+   height:20px;
+  }
+`;

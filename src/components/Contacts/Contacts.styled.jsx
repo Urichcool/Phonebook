@@ -52,9 +52,9 @@ export const ContactsList = styled.ul`
 `;
 
 export const ContactsListItem = styled.li`
-padding: 10px;
-border-radius: 4px;
-  background-color: #ce3dce;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #1dd2ff;
   margin-bottom: 20px;
   &:last-child {
     margin-bottom: 0;
@@ -112,6 +112,7 @@ export const ContactsFilterInput = styled.input`
 `;
 
 export const ContactsDeleteButton = styled.button`
+background-color:white;
   margin: 0;
   padding: 5px;
   display: flex;

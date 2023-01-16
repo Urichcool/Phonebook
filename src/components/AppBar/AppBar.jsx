@@ -15,23 +15,25 @@ export const AppBar = () => {
   const { isLoggedIn } = useAuth();
  
   return (
-    <AppHeader>
-      <AppContainer>
-        <AppHeaderContainer>
-          <PhoneBookLogo to={'./'}>
-            <MdOutlinePhoneAndroid />
-            Phonebook
-          </PhoneBookLogo>
-          {isLoggedIn && (
-            <ContactsLink to={'contacts'}>
-              {' '}
-              <RiContactsFill />
-              Contacts
-            </ContactsLink>
-          )}
-          {isLoggedIn ? <AppBarUserMenu /> : <AppBarNav />}
-        </AppHeaderContainer>
-      </AppContainer>
-    </AppHeader>
+    <>
+      <AppHeader>
+        <AppContainer>
+          <AppHeaderContainer>
+            <PhoneBookLogo to={'./'}>
+              <MdOutlinePhoneAndroid />
+              Phonebook
+            </PhoneBookLogo>
+            {isLoggedIn && (
+              <ContactsLink to={'contacts'}>
+                {' '}
+                <RiContactsFill />
+                Contacts
+              </ContactsLink>
+            )}
+            {isLoggedIn ? <AppBarUserMenu /> : <AppBarNav />}
+          </AppHeaderContainer>
+        </AppContainer>
+      </AppHeader>
+    </>
   );
 };

@@ -7,6 +7,8 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from '../../redux/contacts/contactsSlice';
 import { addContact } from 'redux/contacts/operations';
+import { IoMdContact } from 'react-icons/io';
+import { BsFillTelephoneFill } from 'react-icons/bs';
 
 
 export const AppAddContactsForm = () => {
@@ -35,7 +37,10 @@ export const AppAddContactsForm = () => {
   return (
     <ContactsAddForm autoComplete="off" onSubmit={handleFormSubmit}>
       <ContactsListLabel>
-        Name
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <IoMdContact /> Name
+        </div>
+
         <ContactsAddInput
           type="text"
           name="name"
@@ -45,7 +50,9 @@ export const AppAddContactsForm = () => {
         />
       </ContactsListLabel>
       <ContactsListLabel>
-        Number
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <BsFillTelephoneFill /> Number
+          </div>
         <ContactsAddInput
           type="tel"
           name="number"

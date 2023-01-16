@@ -4,8 +4,12 @@ import {
   LoginFormLabel,
   LoginFormInput,
   LoginFormButton,
+  LoginFormStyledName
 } from './LoginForm.styled';
 import { login } from 'redux/auth/operations';
+import { MdEmail } from 'react-icons/md';
+import { RiLockPasswordFill } from 'react-icons/ri';
+
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -23,16 +27,25 @@ export const LoginForm = () => {
   };
 
   return (
-    <LoginFormStyled onSubmit={handleSubmit} autoComplete="on">
-      <LoginFormLabel>
-        Email
-        <LoginFormInput type="email" name="email" autoComplete="on" />
-      </LoginFormLabel>
-      <LoginFormLabel>
-        Password
-        <LoginFormInput type="password" name="password" autoComplete="on" />
-      </LoginFormLabel>
-      <LoginFormButton type="submit">Login</LoginFormButton>
-    </LoginFormStyled>
+    <>
+      <LoginFormStyled onSubmit={handleSubmit} autoComplete="on">
+        <LoginFormStyledName>Sign up</LoginFormStyledName>
+        <LoginFormLabel>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <MdEmail />
+            Email
+          </div>
+          <LoginFormInput type="email" name="email" autoComplete="on" />
+        </LoginFormLabel>
+        <LoginFormLabel>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <RiLockPasswordFill />
+            Password
+          </div>
+          <LoginFormInput type="password" name="password" autoComplete="on" />
+        </LoginFormLabel>
+        <LoginFormButton type="submit">Login</LoginFormButton>
+      </LoginFormStyled>
+    </>
   );
 };

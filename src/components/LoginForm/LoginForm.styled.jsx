@@ -1,5 +1,13 @@
 import styled from '@emotion/styled';
 
+export const LoginFormStyledName = styled.p`
+  text-align: center;
+  margin: 0;
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom:10px;
+`;
+
 export const LoginFormStyled = styled.form`
   padding: 50px;
   margin-left: auto;

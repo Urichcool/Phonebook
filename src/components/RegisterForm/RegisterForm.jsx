@@ -5,7 +5,11 @@ import {
   RegisterFormLabel,
   RegisterFormInput,
   RegisterFormButton,
+  RegisterFormStyledName
 } from './RegisterForm.styled';
+import { MdEmail } from 'react-icons/md';
+import { RiLockPasswordFill } from 'react-icons/ri';
+import { FaUserAlt } from 'react-icons/fa';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -25,16 +29,26 @@ export const RegisterForm = () => {
 
   return (
     <RegisterFormStyled onSubmit={handleSubmit} autoComplete="on">
+      <RegisterFormStyledName>Register</RegisterFormStyledName>
       <RegisterFormLabel>
-        Username
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <FaUserAlt />
+          Username
+        </div>
+
         <RegisterFormInput type="text" name="name" autoComplete="on" />
       </RegisterFormLabel>
       <RegisterFormLabel>
-        Email
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <MdEmail /> Email
+        </div>
         <RegisterFormInput type="email" name="email" autoComplete="on" />
       </RegisterFormLabel>
       <RegisterFormLabel>
-        Password
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <RiLockPasswordFill /> Password
+        </div>
+
         <RegisterFormInput type="password" name="password" autoComplete="on" />
       </RegisterFormLabel>
       <RegisterFormButton type="submit">Register</RegisterFormButton>

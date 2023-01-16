@@ -8,6 +8,8 @@ import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const routes = {
   HomePage: lazy(() => import('../pages/HomePage')),
@@ -26,31 +28,35 @@ export const App = () => {
 
   const { HomePage, RegisterPage, LoginPage, ContactsPage } = routes;
 
-  return isRefreshing ? (
-    <AppLoader>
-      <ThreeDots color="orange" />
-    </AppLoader>
-  ) : (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
-        <Route
-          path="/register"
-          element={
-            <RestrictedRoute component={RegisterPage} redirectTo="/contacts" />
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <RestrictedRoute component={LoginPage} redirectTo="/contacts" />
-          }
-        />
-        <Route
-          path="/contacts"
-          element={<PrivateRoute component={ContactsPage} redirectTo='/login'/>}
-        />
-      </Route>
-    </Routes>
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route
+            path="/register"
+            element={
+              <RestrictedRoute component={RegisterPage} redirectTo="/" />
+            }
+          />
+          <Route
+            path="/login"
+            element={<RestrictedRoute component={LoginPage} redirectTo="/" />}
+          />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute component={ContactsPage} redirectTo="/login" />
+            }
+          />
+        </Route>
+      </Routes>
+      {isRefreshing && (
+        <AppLoader>
+          <ThreeDots color="orange" />
+        </AppLoader>
+      )}
+      <ToastContainer />
+    </>
   );
 };
