@@ -31,7 +31,7 @@ const AppContactsItem = ({ name, number, id }) => {
         onClick={() => dispatch(deleteContact(id))}
         disabled={isLoading}
       >
-      <AiOutlineClose/>
+        <AiOutlineClose />
       </ContactsDeleteButton>
     </ContactsListItem>
   );

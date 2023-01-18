@@ -1,13 +1,23 @@
-import { AppFooter, AppFooterText, AppFooterLink } from './AppBar.styled';
+import {
+  AppFooter,
+  AppFooterText,
+  AppFooterLink,
+  AppFooterContainer,
+} from './AppBar.styled';
 import { BsGithub } from 'react-icons/bs';
+import { AppContainer } from 'components/App,styled';
 
 export const Footer = () => {
   return (
     <AppFooter>
-      <AppFooterText>2023 | Developed by Yurii Novikov |</AppFooterText>
-      <AppFooterLink href="https://github.com/Urichcool" target={'_blank'}>
-        <BsGithub />
-      </AppFooterLink>
+      <AppContainer>
+        <AppFooterContainer>
+          <AppFooterText>2023 | Developed by </AppFooterText>
+          <AppFooterLink href="https://github.com/Urichcool" target={'_blank'}>
+            <BsGithub />
+          </AppFooterLink>
+        </AppFooterContainer>
+      </AppContainer>
     </AppFooter>
   );
 };

@@ -10,7 +10,6 @@ export const AppBarUserMenu = () => {
 
   return (
     <UserMenu>
-
       <UserMenuText>User: {user.email}</UserMenuText>
       <UserMenuButton onClick={() => dispatch(logOut())}>
         <BiLogOut />

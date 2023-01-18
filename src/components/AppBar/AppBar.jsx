@@ -2,7 +2,7 @@ import {
   AppHeader,
   PhoneBookLogo,
   AppHeaderContainer,
-  ContactsLink
+  ContactsLink,
 } from './AppBar.styled';
 import { AppContainer } from 'components/App,styled';
 import { AppBarNav } from './AppBarNav';
@@ -10,10 +10,11 @@ import { MdOutlinePhoneAndroid } from 'react-icons/md';
 import { useAuth } from 'hooks/useAuth';
 import { AppBarUserMenu } from './AppBarUserMenu';
 import { RiContactsFill } from 'react-icons/ri';
+import { AppBarMobileNav } from './AppBarMobileNav';
 
 export const AppBar = () => {
   const { isLoggedIn } = useAuth();
- 
+
   return (
     <>
       <AppHeader>
@@ -25,7 +26,6 @@ export const AppBar = () => {
             </PhoneBookLogo>
             {isLoggedIn && (
               <ContactsLink to={'contacts'}>
-                {' '}
                 <RiContactsFill />
                 Contacts
               </ContactsLink>
@@ -34,6 +34,7 @@ export const AppBar = () => {
           </AppHeaderContainer>
         </AppContainer>
       </AppHeader>
+      <AppBarMobileNav />
     </>
   );
 };

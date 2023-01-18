@@ -34,9 +34,7 @@ export const login = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (e) {
-      toast.error(
-        'Email or password is incorrect. Please try again'
-      );
+      toast.error('Email or password is incorrect. Please try again');
       return thunkAPI.rejectWithValue(e.message);
     }
   }

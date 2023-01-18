@@ -5,7 +5,7 @@ export const LoginFormStyledName = styled.p`
   margin: 0;
   font-size: 25px;
   font-weight: 500;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 `;
 
 export const LoginFormStyled = styled.form`
@@ -23,7 +23,6 @@ export const LoginFormLabel = styled.label`
   margin-bottom: 15px;
 `;
 export const LoginFormInput = styled.input`
-  width: 500px;
   height: 25px;
   outline: none;
   border-radius: 2px;
@@ -33,6 +32,15 @@ export const LoginFormInput = styled.input`
   &:active {
     border-color: orange;
     transition: 500ms;
+  }
+  width: 250px;
+
+  @media (min-width: 468px) {
+    width: 400px;
+  }
+
+  @media (min-width: 768px) {
+    width: 500px;
   }
 `;
 

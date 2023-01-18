@@ -1,18 +1,18 @@
-import { Helmet } from "react-helmet"
-import { AppContainer } from "components/App,styled"
-import { LoginForm } from "components/LoginForm/LoginForm"
+import { Helmet } from 'react-helmet';
+import { AppContainer } from 'components/App,styled';
+import { LoginForm } from 'components/LoginForm/LoginForm';
 
 const Login = () => {
-    return (
-        <AppContainer>
-            {/* <Helmet>
+  return (
+    <AppContainer>
+      {/* <Helmet>
                 <title>
                     Login
                 </title>
             </Helmet> */}
-<LoginForm/>
-       </AppContainer> 
-    )
-}
+      <LoginForm />
+    </AppContainer>
+  );
+};
 
-export default Login
+export default Login;

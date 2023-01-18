@@ -7,7 +7,10 @@ const HomePage = () => {
   return (
     <AppContainer>
       {isLoggedIn ? (
-        <HomePageText>Welcome {user.name} 💁‍♀️ please click 'Contacts' to see your private phonebook</HomePageText>
+        <HomePageText>
+          Welcome {user.name} 💁‍♀️ please click 'Contacts' to see your private
+          phonebook
+        </HomePageText>
       ) : (
         <HomePageText>
           Welcome 💁‍♀️ please register or login to use the Phonebook

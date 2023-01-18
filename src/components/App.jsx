@@ -8,7 +8,7 @@ import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const routes = {
@@ -30,32 +30,36 @@ export const App = () => {
 
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route
-            path="/register"
-            element={
-              <RestrictedRoute component={RegisterPage} redirectTo="/" />
-            }
-          />
-          <Route
-            path="/login"
-            element={<RestrictedRoute component={LoginPage} redirectTo="/" />}
-          />
-          <Route
-            path="/contacts"
-            element={
-              <PrivateRoute component={ContactsPage} redirectTo="/login" />
-            }
-          />
-        </Route>
-      </Routes>
-      {isRefreshing && (
-        <AppLoader>
-          <ThreeDots color="orange" />
-        </AppLoader>
+      {isRefreshing ? (
+        <>
+          <AppLoader>
+            <ThreeDots color="orange" />
+          </AppLoader>
+        </>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route
+              path="/register"
+              element={
+                <RestrictedRoute component={RegisterPage} redirectTo="/" />
+              }
+            />
+            <Route
+              path="/login"
+              element={<RestrictedRoute component={LoginPage} redirectTo="/" />}
+            />
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute component={ContactsPage} redirectTo="/login" />
+              }
+            />
+          </Route>
+        </Routes>
       )}
+
       <ToastContainer />
     </>
   );

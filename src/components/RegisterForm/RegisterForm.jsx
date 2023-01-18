@@ -5,7 +5,7 @@ import {
   RegisterFormLabel,
   RegisterFormInput,
   RegisterFormButton,
-  RegisterFormStyledName
+  RegisterFormStyledName,
 } from './RegisterForm.styled';
 import { MdEmail } from 'react-icons/md';
 import { RiLockPasswordFill } from 'react-icons/ri';

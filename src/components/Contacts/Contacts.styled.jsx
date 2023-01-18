@@ -1,12 +1,10 @@
 import styled from '@emotion/styled';
 
-
 export const ContactsApp = styled.div`
- padding: 60px;
+  padding: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 `;
 
 export const ContactsText = styled.p`
@@ -16,15 +14,11 @@ export const ContactsText = styled.p`
   font-weight: 500;
 `;
 
-
-
 export const ContactsAddForm = styled.form`
-  width: 400px;
   margin-bottom: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 `;
 
 export const ContactsAddButton = styled.button`
@@ -48,7 +42,15 @@ export const ContactsList = styled.ul`
   margin: 0;
   padding: 0;
   list-style-position: inside;
-  width: 400px;
+  width: 250px;
+
+  @media (min-width: 468px) {
+    width: 400px;
+  }
+
+  @media (min-width: 768px) {
+    width: 500px;
+  }
 `;
 
 export const ContactsListItem = styled.li`
@@ -66,14 +68,14 @@ export const ContactsListItem = styled.li`
 
 export const ContactsListText = styled.p`
   font-size: 20px;
-  color:white;
+  color: white;
   margin: 0;
   display: flex;
   align-items: center;
-  svg{
+  svg {
     margin-right: 5px;
   }
-`
+`;
 
 export const ContactsListLabel = styled.label`
   display: flex;
@@ -83,8 +85,15 @@ export const ContactsListLabel = styled.label`
 `;
 
 export const ContactsAddInput = styled.input`
-  position: relative;
-  width: 400px;
+  width: 250px;
+
+  @media (min-width: 468px) {
+    width: 400px;
+  }
+
+  @media (min-width: 768px) {
+    width: 500px;
+  }
   height: 25px;
   outline: none;
   border-radius: 2px;
@@ -98,7 +107,15 @@ export const ContactsAddInput = styled.input`
 `;
 
 export const ContactsFilterInput = styled.input`
-  width: 400px;
+  width: 250px;
+
+  @media (min-width: 468px) {
+    width: 400px;
+  }
+
+  @media (min-width: 768px) {
+    width: 500px;
+  }
   height: 25px;
   outline: none;
   border-radius: 2px;
@@ -112,7 +129,7 @@ export const ContactsFilterInput = styled.input`
 `;
 
 export const ContactsDeleteButton = styled.button`
-background-color:white;
+  background-color: white;
   margin: 0;
   padding: 5px;
   display: flex;

@@ -4,12 +4,11 @@ import {
   LoginFormLabel,
   LoginFormInput,
   LoginFormButton,
-  LoginFormStyledName
+  LoginFormStyledName,
 } from './LoginForm.styled';
 import { login } from 'redux/auth/operations';
 import { MdEmail } from 'react-icons/md';
 import { RiLockPasswordFill } from 'react-icons/ri';
-
 
 export const LoginForm = () => {
   const dispatch = useDispatch();

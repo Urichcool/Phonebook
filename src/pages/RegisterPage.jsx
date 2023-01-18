@@ -1,17 +1,16 @@
-import { Helmet } from "react-helmet"
-import { AppContainer } from "components/App,styled"
-import { RegisterForm } from "components/RegisterForm/RegisterForm"
-
+import { Helmet } from 'react-helmet';
+import { AppContainer } from 'components/App,styled';
+import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 
 const Register = () => {
-    return (
-        <AppContainer>
-            {/* <Helmet>
+  return (
+    <AppContainer>
+      {/* <Helmet>
                 <title>Registration</title>
             </Helmet> */}
-            <RegisterForm/>
-        </AppContainer>
-    )
-}
+      <RegisterForm />
+    </AppContainer>
+  );
+};
 
-export default Register
+export default Register;

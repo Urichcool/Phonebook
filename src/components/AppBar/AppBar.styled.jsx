@@ -42,15 +42,15 @@ export const PhoneBookLogo = styled(NavLink)`
 `;
 
 export const ContactsLink = styled(NavLink)`
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+  }
   text-decoration: none;
   color: inherit;
   font-size: 20px;
   margin-right: auto;
-  display: flex;
   align-items: center;
-  &:last-child {
-    margin-right: 0;
-  }
   &.active {
     color: #88e3fa;
   }
@@ -63,9 +63,11 @@ export const ContactsLink = styled(NavLink)`
   }
 `;
 
-
 export const PhoneBookNav = styled.nav`
-  display: flex;
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+  }
 `;
 export const PhoneBookNavLink = styled(NavLink)`
   text-decoration: none;
@@ -90,11 +92,14 @@ export const PhoneBookNavLink = styled(NavLink)`
   }
 `;
 
-
 export const UserMenu = styled.div`
   display: flex;
   align-items: center;
-`
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+  }
+`;
 
 export const UserMenuText = styled.p`
   margin: 0;
@@ -121,12 +126,10 @@ export const UserMenuButton = styled.button`
 `;
 
 export const AppFooter = styled.footer`
-display:flex;
-justify-content:center;
-align-items:center;
-  width:100%;
- bottom:0;
-  position:fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
   z-index: 1100;
   padding-right: 24px;
   padding-left: 24px;
@@ -138,13 +141,18 @@ align-items:center;
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 `;
 
+export const AppFooterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 export const AppFooterText = styled.footer`
-margin: 0;
+  margin: 0;
 `;
 
 export const AppFooterLink = styled.a`
-color:white;
-cursor: pointer;
+  color: white;
+  cursor: pointer;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -154,8 +162,75 @@ cursor: pointer;
     color: orange;
     transition: 500ms;
   }
-  svg{
-   width:20px;
-   height:20px;
+  svg {
+    width: 20px;
+    height: 20px;
   }
 `;
+
+export const AppBarMobileNavContainer = styled.div`
+  display: none;
+  @media (max-width: 767px) {
+    display: block;
+  }
+`;
+
+export const ContactsLinkMobile = styled(NavLink)`
+  text-decoration: none;
+  color: inherit;
+  font-size: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  &.active {
+    color: #88e3fa;
+  }
+  &:hover:not(.active),
+  &:focus-visible:not(.active) {
+    color: orange;
+  }
+  svg {
+    margin-right: 5px;
+  }
+`;
+
+export const AppBarMobileNavStyles = {
+  bmBurgerButton: {
+    position: 'fixed',
+    width: '36px',
+    height: '30px',
+    right: '25px',
+    top: '10px',
+    zIndex: '2000',
+  },
+  bmBurgerBars: {
+    background: 'white',
+  },
+  bmBurgerBarsHover: {
+    background: '#a90000',
+  },
+  bmCrossButton: {
+    height: '24px',
+    width: '24px',
+  },
+  bmCross: {
+    background: '#bdc3c7',
+  },
+  bmMenuWrap: {
+    position: 'fixed',
+  },
+  bmMenu: {
+    background: '#373a47',
+    padding: '2.5em 1.5em 0',
+    fontSize: '1.15em',
+  },
+  bmMorphShape: {
+    fill: '#373a47',
+  },
+  bmItemList: {
+    color: '#b8b7ad',
+  },
+  bmOverlay: {
+    background: 'rgba(0, 0, 0, 0.3)',
+  },
+};
