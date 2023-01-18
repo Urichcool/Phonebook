@@ -11,20 +11,38 @@ import { logOut } from 'redux/auth/operations';
 import { useDispatch } from 'react-redux';
 import { ContactsLinkMobile } from './AppBar.styled';
 import { RiContactsFill } from 'react-icons/ri';
+import { useState } from 'react';
 
 export const AppBarMobileNav = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
+  
   const { isLoggedIn } = useAuth();
   const { user } = useAuth();
   const dispatch = useDispatch();
 
+  const handleStateChange = (state) => {
+    setMenuOpen(state.isOpen)  
+  }
+  
+ 
+ const closeMenu = () => {
+    setMenuOpen(false)
+  }
+  
+
   return (
     <AppBarMobileNavContainer>
-      <Menu right styles={AppBarMobileNavStyles}>
+      <Menu
+        right
+        isOpen={menuOpen}
+        onStateChange={state => handleStateChange(state)}
+        styles={AppBarMobileNavStyles}
+      >
         {isLoggedIn ? (
           <>
             <ContactsLinkMobile
-              to={'contacts'}
-            >
+              onClick={() => closeMenu()}
+              to={'contacts'}>
               <RiContactsFill />
               Contacts
             </ContactsLinkMobile>
@@ -41,7 +59,10 @@ export const AppBarMobileNav = () => {
               style={{
                 marginRight: '0',
               }}
-              onClick={() => dispatch(logOut())}
+              onClick={() => {
+                dispatch(logOut());
+                closeMenu()
+              }}
             >
               <BiLogOut />
               Logout
@@ -50,6 +71,7 @@ export const AppBarMobileNav = () => {
         ) : (
           <>
             <PhoneBookNavLink
+              onClick={() => closeMenu()}
               to={'register'}
               style={{
                 marginBottom: '10px',
@@ -60,6 +82,7 @@ export const AppBarMobileNav = () => {
               Register
             </PhoneBookNavLink>
             <PhoneBookNavLink
+              onClick={() => closeMenu()}
               to={'login'}
               style={{
                 marginRight: '0',
