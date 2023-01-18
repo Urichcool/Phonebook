@@ -6,12 +6,21 @@ import { store, persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import { AppLoader } from './components/App.styled';
+import { ThreeDots } from 'react-loader-spinner';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter>
+      <PersistGate
+        loading={
+          <AppLoader>
+            <ThreeDots color="orange" />
+          </AppLoader>
+        }
+        persistor={persistor}
+      >
+        <BrowserRouter basename="/goit-react-hw-08-phonebook/">
           <App />
         </BrowserRouter>
       </PersistGate>

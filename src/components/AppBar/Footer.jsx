@@ -5,7 +5,7 @@ import {
   AppFooterContainer,
 } from './AppBar.styled';
 import { BsGithub } from 'react-icons/bs';
-import { AppContainer } from 'components/App,styled';
+import { AppContainer } from 'components/App.styled';
 
 export const Footer = () => {
   return (

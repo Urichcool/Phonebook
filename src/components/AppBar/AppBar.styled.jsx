@@ -199,7 +199,7 @@ export const AppBarMobileNavStyles = {
     position: 'fixed',
     width: '36px',
     height: '30px',
-    right: '25px',
+    right: '40px',
     top: '10px',
     zIndex: '2000',
   },

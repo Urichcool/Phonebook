@@ -1,7 +1,7 @@
 import { ThreeDots } from 'react-loader-spinner';
 import { useDispatch } from 'react-redux';
 import { useEffect, lazy } from 'react';
-import { AppLoader } from './App,styled';
+import { AppLoader } from './App.styled';
 import { Layout } from './Layout';
 import { Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/operations';

@@ -4,7 +4,7 @@ import {
   AppHeaderContainer,
   ContactsLink,
 } from './AppBar.styled';
-import { AppContainer } from 'components/App,styled';
+import { AppContainer } from 'components/App.styled';
 import { AppBarNav } from './AppBarNav';
 import { MdOutlinePhoneAndroid } from 'react-icons/md';
 import { useAuth } from 'hooks/useAuth';
@@ -14,7 +14,6 @@ import { AppBarMobileNav } from './AppBarMobileNav';
 
 export const AppBar = () => {
   const { isLoggedIn } = useAuth();
-
   return (
     <>
       <AppHeader>

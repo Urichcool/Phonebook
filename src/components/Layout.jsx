@@ -1,7 +1,7 @@
 import { AppBar } from './AppBar/AppBar';
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-import { AppLoader } from './App,styled';
+import { AppLoader } from './App.styled';
 import { ThreeDots } from 'react-loader-spinner';
 import { Footer } from './AppBar/Footer';
 
